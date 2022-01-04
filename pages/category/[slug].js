@@ -6,7 +6,7 @@ import {
   getPosts,
 } from "../../services";
 import { useRouter } from "next/router";
-import { Categories, PostWidget, PostCard } from "../../components";
+import { Categories, PostWidget, PostCard, Loader } from "../../components";
 const CategoryPosts = ({ posts }) => {
   const router = useRouter();
 
