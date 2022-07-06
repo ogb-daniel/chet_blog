@@ -37,7 +37,7 @@ const Profile = ({posts})=>{
           
             <div className="mx-5 px-5 flex-1">
                 <p className='font-bold  text-2xl mb-4 text-white '>My Blogs</p>
-                {post.length > 0 ? post.map((post, index) => (
+                {post && post.length > 0 ? post.map((post, index) => (
             <PostCard post={post.node} key={post.title} />
           )) : <p className='font-medium text-white'>You do not have any content.</p> }
             </div>
