@@ -3,18 +3,19 @@ import { getAuthorPosts, getUser } from '../services';
 import { Layout, PostCard } from '../components';
 import Link from 'next/link'
 const Profile = ({posts})=>{
-    const [author, setAuthor] = useState();
+    const [author, setAuthor] = useState("");
     const [post, setPost] = useState([]);
 
-    const fetchPost=async()=>{
-        const user = window.localStorage.getItem("user")
-        getUser(user).then((data)=> setAuthor(data.author));
-        const posts = await getAuthorPosts(user) || [];
-        setPost(posts);
-        console.log(posts);
-    }
-    useEffect(() => {
-        fetchPost();
+  
+    useEffect(async() => {
+        const fetchPost=async()=>{
+            const user = window.localStorage.getItem("user")
+            getUser(user).then((data)=> setAuthor(data.author));
+            const posts = await getAuthorPosts(user) || [];
+            setPost(posts);
+            console.log(posts);
+        }
+        fetchPost()
     }, [])
 
     return(
@@ -38,7 +39,7 @@ const Profile = ({posts})=>{
           
             <div className="mx-5 px-5 flex-1">
                 <p className='font-bold  text-2xl mb-4 text-white '>My Blogs</p>
-                {post ? post.map((post, index) => (
+                {post  && post.length > 0 ? post.map((post, index) => (
             <PostCard post={post.node} key={post.title} />
           )) : <p className='font-medium text-white'>You do not have any content.</p> }
             </div>
