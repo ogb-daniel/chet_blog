@@ -11,6 +11,7 @@ const Profile = ({posts})=>{
         getUser(user).then((data)=> setAuthor(data.author));
         const posts = await getAuthorPosts(user) || [];
         setPost(posts);
+        console.log(posts);
     }
     useEffect(() => {
         fetchPost();
@@ -43,7 +44,7 @@ const Profile = ({posts})=>{
             </div>
             <div className="bg-white p-5 border rounded max-w-md h-fit">
                 <span className='font-bold text-gray-600'>BIOGRAPHY</span>
-                <p>{author && author.bio.length > 0 ? author.bio : 'You do not have a bio'}</p>
+                <p>{author && author.bio && author.bio.length > 0 ? author.bio : 'You do not have a bio'}</p>
             </div>
         </div>
         </Layout>
