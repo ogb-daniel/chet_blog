@@ -22,7 +22,7 @@ const Profile = ({posts})=>{
         <Layout>
         <div className="flex justify-between container mx-auto px-10">
            
-            {author ? (
+            {/* {author ? (
                 <div className="flex flex-col items-center flex-initial h-fit">
                 <img src={author.photo.url} alt={author.name}  className="w-32 h-32 rounded-full object-cover " />
             <p className='font-bold mt-2 text-white'>{author.name}</p>
@@ -46,7 +46,8 @@ const Profile = ({posts})=>{
             <div className="bg-white p-5 border rounded max-w-md h-fit">
                 <span className='font-bold text-gray-600'>BIOGRAPHY</span>
                 <p>{author && author.bio  ? author.bio : 'You do not have a bio'}</p>
-            </div>
+            </div> */}
+            yo
         </div>
         </Layout>
     )
