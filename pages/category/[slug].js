@@ -6,7 +6,7 @@ import {
   getPosts,
 } from "../../services";
 import { useRouter } from "next/router";
-import { Categories, PostWidget, PostCard, Loader } from "../../components";
+import { Categories, PostWidget, PostCard, Loader, Layout } from "../../components";
 const CategoryPosts = ({ posts }) => {
   const router = useRouter();
 
@@ -15,6 +15,7 @@ const CategoryPosts = ({ posts }) => {
   }
 
   return (
+    <Layout>
     <div className="container mx-auto px-10 mb-8">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="col-span-1 lg:col-span-8">
@@ -29,6 +30,7 @@ const CategoryPosts = ({ posts }) => {
         </div>
       </div>
     </div>
+    </Layout>
   );
 };
 

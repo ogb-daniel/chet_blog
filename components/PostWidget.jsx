@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import moment from "moment";
 import Link from "next/link";
 import { getRecentPosts, getSimilarPosts } from "../services";
+import { COLORS } from "../public/theme";
 const PostWidget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
   useEffect(() => {
@@ -14,7 +15,7 @@ const PostWidget = ({ categories, slug }) => {
     }
   }, [slug]);
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
+    <div className="text-white shadow-lg rounded-lg p-8 mb-8" style={{backgroundColor:COLORS.primary}}>
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">
         {slug ? "Related Posts" : "Recent Posts"}
       </h3>

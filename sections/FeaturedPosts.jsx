@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { FeaturedPostCard } from "../components";
+import { COLORS } from "../public/theme";
 
 import { getFeaturedPosts } from "../services";
 
@@ -36,7 +37,7 @@ const FeaturedPosts = () => {
   }, []);
 
   const customLeftArrow = (
-    <div className="absolute flex justify-center arrow-btn left-0 text-center py-3 cursor-pointer bg-orange-600 rounded-full">
+    <div className="absolute flex justify-center arrow-btn left-0 text-center py-3 cursor-pointer rounded-full" style={{background:COLORS.primary}}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -50,7 +51,7 @@ const FeaturedPosts = () => {
   );
 
   const customRightArrow = (
-    <div className="absolute flex justify-center arrow-btn right-0 text-center py-3 cursor-pointer bg-orange-600 rounded-full">
+    <div className="absolute flex justify-center arrow-btn right-0 text-center py-3 cursor-pointer  rounded-full" style={{background:COLORS.primary}}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

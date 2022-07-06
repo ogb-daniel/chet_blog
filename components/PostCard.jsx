@@ -1,9 +1,10 @@
 import React from "react";
 import moment from "moment";
 import Link from "next/link";
+import { COLORS } from "../public/theme";
 const PostCard = ({ post }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
+    <div className="text-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8" style={{backgroundColor:COLORS.primary}}>
       <div className="relative overflow-hidden shadow-md pb-80 mb-6 ">
         <img
           src={post.featuredImage.url}
@@ -11,7 +12,7 @@ const PostCard = ({ post }) => {
           className="object-top absolute h-80 w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg hover:object-bottom transition-all duration-500"
         />
       </div>
-      <h1 className="transition duration-700 text-center mb-8 cursor-pointer hover:text-orange-600 text-3xl font-semibold">
+      <h1 className="transition duration-700 text-center mb-8 cursor-pointer text-3xl font-semibold">
         <Link href={`/post/${post.slug}`}>{post.title}</Link>
       </h1>
       <div className="block lg:flex text-center items-center justify-center mb-8 w-full ">
@@ -21,11 +22,11 @@ const PostCard = ({ post }) => {
             alt={post.author.name}
             className="align-middle rounded-full w-10 h-10 object-cover"
           />
-          <p className="inline align-middle text-gray-700 ml-2 text-lg">
+          <p className="inline align-middle  ml-2 text-lg">
             {post.author.name}
           </p>
         </div>
-        <div className="flex font-medium text-gray-700 justify-center items-center space-x-2">
+        <div className="flex font-medium  justify-center items-center space-x-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -35,18 +36,18 @@ const PostCard = ({ post }) => {
             <path fill="none" d="M0 0h24v24H0z" />
             <path
               d="M2 11h20v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-9zm15-8h4a1 1 0 0 1 1 1v5H2V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2z"
-              fill="rgba(242,120,16,1)"
+              fill="#ffff"
             />
           </svg>
           <span>{moment(post.createdAt).format("MMM DD, YYYY")}</span>
         </div>
       </div>
-      <p className="text-center text-lg text-gray-700 font-normal px-4 lg:p-20 mb-8">
+      <p className="text-center text-lg  font-normal px-4 lg:p-20 mb-8">
         {post.excerpt}
       </p>
       <div className="text-center">
         <Link href={`/post/${post.slug}`}>
-          <span className="transition duration-500 transform hover:-translate-y-1 inline-block bg-orange-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
+          <span className="transition duration-500 transform hover:-translate-y-1 inline-block bg-white text-lg font-semibold rounded-full text-black  px-8 py-3 cursor-pointer">
             Continue Reading
           </span>
         </Link>
