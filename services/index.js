@@ -365,6 +365,7 @@ export const uploadImage = async(form)=>{
     mode:'no-cors',
     body: form
   });
+  console.log(response)
   const image = await response.json();
   return image.id
 }
