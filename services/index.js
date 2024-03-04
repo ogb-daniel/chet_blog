@@ -362,6 +362,7 @@ export const getAuthors=async(name)=>{
 export const uploadImage = async(form)=>{
   const response  = await fetch(`https://lazy-teal-panda-veil.cyclic.app/upload`, {
     method: "POST",
+    mode:'no-cors',
     body: form
   });
   const image = await response.json();
