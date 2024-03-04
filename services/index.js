@@ -360,7 +360,7 @@ export const getAuthors=async(name)=>{
 }
 
 export const uploadImage = async(form)=>{
-  const response  = await fetch(`https://cmsfileupload.herokuapp.com/upload`, {
+  const response  = await fetch(`https://lazy-teal-panda-veil.cyclic.app/upload`, {
     method: "POST",
     body: form
   });
